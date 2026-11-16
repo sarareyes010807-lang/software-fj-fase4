@@ -1,3 +1,102 @@
+"""
+SOFTWARE FJ - Sistema Integral de Gestion de Clientes, Servicios y Reservas
+UNAD - Ejercicio 1
+
+Aplicacion de consola orientada a objetos. No utiliza bases de datos.
+La informacion vive en listas mientras el programa esta en ejecucion.
+Los eventos y errores se registran en el archivo software_fj.log.
+
+Ejecucion:
+    python software_fj.py
+"""
+
+from __future__ import annotations
+
+import logging
+import re
+import uuid
+from abc import ABC, abstractmethod
+from datetime import datetime
+from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
+from typing import Any, Callable, Optional
+
+
+# ============================================================================
+# 1. CONFIGURACION DEL REGISTRO DE EVENTOS Y ERRORES (LOGS)
+# ============================================================================
+
+
+def configurar_logger() -> logging.Logger:
+    """Configura el archivo de registro sin duplicar manejadores."""
+    logger = logging.getLogger("SoftwareFJ")
+    logger.setLevel(logging.INFO)
+
+    if not logger.handlers:
+        manejador = logging.FileHandler("software_fj.log", encoding="utf-8")
+        formato = logging.Formatter(
+            "%(asctime)s | %(levelname)s | %(message)s",
+            datefmt="%Y-%m-%d %H:%M:%S",
+        )
+        manejador.setFormatter(formato)
+        logger.addHandler(manejador)
+
+    return logger
+
+
+LOGGER = configurar_logger()
+
+
+# ============================================================================
+# 2. EXCEPCIONES PERSONALIZADAS
+# ============================================================================
+
+
+class SistemaFJError(Exception):
+    """Excepcion base para los errores controlados del sistema."""
+
+
+class ValidacionError(SistemaFJError):
+    """Se presenta cuando un dato no cumple las reglas de validacion."""
+
+
+class DatoInvalidoError(ValidacionError):
+    """Se presenta cuando un dato tiene un formato o valor incorrecto."""
+
+
+class ParametroFaltanteError(ValidacionError):
+    """Se presenta cuando falta un parametro obligatorio."""
+
+
+class OperacionNoPermitidaError(SistemaFJError):
+    """Se presenta cuando se intenta realizar una operacion no permitida."""
+
+
+class ServicioNoDisponibleError(OperacionNoPermitidaError):
+    """Se presenta cuando un servicio esta desactivado o no disponible."""
+
+
+class ClienteNoEncontradoError(SistemaFJError):
+    """Se presenta cuando el cliente solicitado no existe en el sistema."""
+
+
+class ServicioNoEncontradoError(SistemaFJError):
+    """Se presenta cuando el servicio solicitado no existe en el sistema."""
+
+
+class ReservaNoEncontradaError(SistemaFJError):
+    """Se presenta cuando la reserva solicitada no existe."""
+
+
+class ReservaError(SistemaFJError):
+    """Se presenta ante problemas durante la creacion o procesamiento de reservas."""
+
+
+class EstadoReservaError(ReservaError):
+    """Se presenta cuando una reserva no permite la operacion solicitada."""
+
+
+class CalculoCostoError(SistemaFJError):
+    """Se presenta cuando no es posible calcular correctamente un costo."""
 
 """
 Modulo de servicios de Software FJ.
