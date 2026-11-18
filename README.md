@@ -1,5 +1,7 @@
 levis/readme-aportes
+
 estos son mis aportes del trabajo en grupo fase 4.py
+
 
 Implementación de excepciones personalizadas
 Mi aporte en esta primera parte consiste en desarrollar las excepciones personalizadas del sistema Software FJ, con el propósito de controlar los posibles errores que se puedan presentar durante la ejecución del programa.
