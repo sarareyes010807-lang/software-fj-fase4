@@ -1,6 +1,5 @@
 levis/readme-aportes
 
-
 estos son mis aportes del trabajo en grupo fase 4.py
 f# Software FJ - Sistema Integral de Gestion de Clientes, Servicios y Reservas
 
@@ -22,3 +21,4 @@ Mi aporte fue:
 - Crear la clase Reserva con sus estados, el gestor SistemaFJ que une a los clientes, servicios y reservas, y la demostración inicial de 17 operaciones.
 
 Lo hice de esta forma para que el sistema quedara orden
+aporte para pull request-fase 4
