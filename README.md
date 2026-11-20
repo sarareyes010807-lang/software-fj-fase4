@@ -22,3 +22,22 @@ Mi aporte fue:
 - Crear la clase Reserva con sus estados, el gestor SistemaFJ que une a los clientes, servicios y reservas, y la demostración inicial de 17 operaciones.
 
 Lo hice de esta forma para que el sistema quedara orden
+
+## Parte de Sarai
+
+### Mi aporte
+Hice la clase Reserva (reserva.py), la simulación (main.py) y el README.
+
+### reserva.py
+- Une un cliente, un servicio y las horas. La reserva puede estar PENDIENTE, CONFIRMADA o CANCELADA.
+- Si los datos no sirven, lanza un error propio y guarda el error original con raise from.
+- confirmar() y cancelar() revisan que la operación se pueda hacer.
+- procesar() usa try, except, else y finally, y todo queda anotado en el log.
+
+### main.py
+- Hace 15 operaciones de prueba, unas correctas y otras con errores a propósito.
+- Si una falla, el programa no se detiene y sigue con la siguiente.
+
+### Cómo ejecutarlo
+Poner todos los archivos .py en la misma carpeta y ejecutar: python main.py
+Los errores quedan en el archivo software_fj.log.
