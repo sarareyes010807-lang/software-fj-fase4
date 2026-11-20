@@ -41,3 +41,18 @@ Hice la clase Reserva (reserva.py), la simulación (main.py) y el README.
 ### Cómo ejecutarlo
 Poner todos los archivos .py en la misma carpeta y ejecutar: python main.py
 Los errores quedan en el archivo software_fj.log.
+
+## Parte de Mariela
+
+### Mi aporte
+
+Desarrollé el módulo de servicios (`servicios.py`), encargado de definir la estructura y el funcionamiento de los servicios ofrecidos por el sistema.
+
+**servicios.py**
+
+- Creé la clase abstracta `Servicio`, estableciendo atributos como nombre, descripción y precio base, junto con métodos que deben implementar los servicios especializados.
+- Implementé validaciones para los precios, cantidades, capacidades y parámetros específicos, evitando datos incorrectos en el sistema.
+- Desarrollé los tres servicios especializados: `ReservaSala`, `AlquilerEquipo` y `Asesoria`, cada uno con sus propias características y reglas.
+- Implementé los métodos para calcular costos y describir los servicios, teniendo en cuenta horas de uso o cantidad de equipos según corresponda.
+- Incorporé el cálculo detallado de costos con impuestos y descuentos porcentuales, incluyendo validaciones para evitar valores fuera de los rangos permitidos.
+- Apliqué principios de programación orientada a objetos, como abstracción, herencia y encapsulamiento, para contribuir a la organización y funcionamiento del sistema.
