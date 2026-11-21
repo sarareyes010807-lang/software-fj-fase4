@@ -36,3 +36,4 @@ def configurar_logger(nombre="sistema_fj", archivo="sistema_fj.log", nivel=loggi
     logger.addHandler(handler)
     logger._fj_handler_agregado = True
     return logger
+
