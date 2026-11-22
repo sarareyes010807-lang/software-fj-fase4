@@ -27,3 +27,13 @@ Desarrollé el módulo de servicios (`servicios.py`), encargado de definir la es
 - Implementé los métodos para calcular costos y describir los servicios, teniendo en cuenta horas de uso o cantidad de equipos según corresponda.
 - Incorporé el cálculo detallado de costos con impuestos y descuentos porcentuales, incluyendo validaciones para evitar valores fuera de los rangos permitidos.
 - Apliqué principios de programación orientada a objetos, como abstracción, herencia y encapsulamiento, para contribuir a la organización y funcionamiento del sistema.
+
+Aporte - Sarai
+
+Hice la clase base y el cliente (entidad.py y cliente.py), la clase Reserva (reserva.py), la simulación (main.py) y el README.
+
+En entidad.py creé una clase abstracta que le da un id a cada objeto. En cliente.py guardé los datos del cliente de forma privada y validé el nombre, el documento, el correo y el teléfono.
+
+En reserva.py la reserva une un cliente, un servicio y la cantidad, y tiene tres estados: pendiente, confirmada y cancelada. Si algo falla lanza un error propio y guarda el error original. El método procesar usa try, except, else y finally, y todo queda anotado en el log.
+
+En main.py hice 15 operaciones de prueba, unas correctas y otras con errores a propósito. Si una falla, el programa no se detiene y sigue con la siguiente.
