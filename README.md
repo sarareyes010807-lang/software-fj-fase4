@@ -13,3 +13,17 @@ Ahí configuré el sistema de registro (log) donde queda guardada toda la activi
 
 3. Creé el archivo fase 4-practica simulada.py
 Ahí está el programa principal. Creé las clases EntidadSistema, Cliente, Servicio, Sala, Equipo, Asesoría y la clase Reserva con el gestor SistemaFJ, donde se hacen las reservas, se calculan los costos y se validan los datos usando las excepciones y el logger que creé.
+## Parte de Mariela
+
+### Mi aporte
+
+Desarrollé el módulo de servicios (`servicios.py`), encargado de definir la estructura y el funcionamiento de los servicios ofrecidos por el sistema.
+
+**servicios.py**
+
+- Creé la clase abstracta `Servicio`, estableciendo atributos como nombre, descripción y precio base, junto con métodos que deben implementar los servicios especializados.
+- Implementé validaciones para los precios, cantidades, capacidades y parámetros específicos, evitando datos incorrectos en el sistema.
+- Desarrollé los tres servicios especializados: `ReservaSala`, `AlquilerEquipo` y `Asesoria`, cada uno con sus propias características y reglas.
+- Implementé los métodos para calcular costos y describir los servicios, teniendo en cuenta horas de uso o cantidad de equipos según corresponda.
+- Incorporé el cálculo detallado de costos con impuestos y descuentos porcentuales, incluyendo validaciones para evitar valores fuera de los rangos permitidos.
+- Apliqué principios de programación orientada a objetos, como abstracción, herencia y encapsulamiento, para contribuir a la organización y funcionamiento del sistema.
